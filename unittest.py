@@ -1,11 +1,13 @@
-import unittest
-import requests
+__author__ = 'k0emt'
 
-class TestWebsiteLoading(unittest.TestCase):
-    def test_website_loading(self):
-        url = 'https://atg.world'
-        response = requests.get(url)
-        self.assertEqual(response.status_code, 200)
+import unittest
+from Experiment import Greeter
+
+class MyTestCase(unittest.TestCase):
+    def test_default_greeting_set(self):
+        greeter = Greeter()
+        # this test will fail until you change the Greeter to return this expected message
+        self.assertEqual(greeter.message, 'Hello world!')
 
 if __name__ == '__main__':
     unittest.main()
